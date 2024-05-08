@@ -117,7 +117,7 @@ Supported Propreitory Device Types:<br>
 
 ![](Docs/Sercom0.png)
 
-![](Docs/Sercom0_Configuration.png)
+![](Docs/Sercom0_Config.png)
 
 - Modify the System Configuration as below.
 
