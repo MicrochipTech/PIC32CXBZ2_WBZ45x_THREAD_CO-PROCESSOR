@@ -185,7 +185,7 @@ void threadHandleStateChange(void);
 void threadTmrCb();
 void threadInitData();
 void printIpv6Address(void);
-void threadSendIPAddr(void);
+void threadSendPeriodicMsg(void);
 
 void threadReceiveData(const otMessageInfo *aMessageInfo, uint16_t length, uint8_t *msgPayload);
 void addDemoDevice(const otIp6Address *addr, uint8_t nameSize, uint8_t *name, uint8_t type);

@@ -10,34 +10,7 @@
             <itemPath>../src/config/default/bsp/bsp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-            <logicalFolder name="common_crypto"
-                           displayName="common_crypto"
-                           projectFiles="true">
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Aead_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/wolfcrypt/user_settings.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Sym_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Kas_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Aead_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Hash.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Mac_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_RNG.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Aead_Cipher.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Hash_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_DigSign_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Mac_Cipher.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_DigSign.h</itemPath>
-              <itemPath>../src/config/default/crypto/wolfcrypt/config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Common.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_DigSign_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Sym_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_RNG_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_RNG_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Kas.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Hash_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Kas_WolfcryptWrapper.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Mac_Config.h</itemPath>
-              <itemPath>../src/config/default/crypto/common_crypto/MCHP_Crypto_Sym_Cipher.h</itemPath>
-            </logicalFolder>
+            <itemPath>../src/config/default/crypto/crypto.h</itemPath>
           </logicalFolder>
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
             <logicalFolder name="device_support"
@@ -234,6 +207,7 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/code_utils.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/clearable.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/iterator_utils.hpp</itemPath>
+                      <itemPath>../src/config/default/driver/thread/openthread/src/core/common/callback.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/settings_driver.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/logging.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/common/owned_ptr.hpp</itemPath>
@@ -296,6 +270,7 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/mac.h</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/misc.h</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/dhcp6_client.h</itemPath>
+                      <itemPath>../src/config/default/driver/thread/openthread/src/core/config/power_calibration.h</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/netdata_publisher.h</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/border_router.h</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/config/dnssd_server.h</itemPath>
@@ -328,7 +303,6 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/mbedtls.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/storage.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/hkdf_sha256.hpp</itemPath>
-                      <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/pbkdf2_cmac.hpp</itemPath>
                     </logicalFolder>
                     <logicalFolder name="diags" displayName="diags" projectFiles="true">
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/diags/factory_diags.hpp</itemPath>
@@ -454,6 +428,7 @@
                     <logicalFolder name="utils" displayName="utils" projectFiles="true">
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/heap.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/srp_client_buffers.hpp</itemPath>
+                      <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/power_calibration.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/otns.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/channel_manager.hpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/child_supervision.hpp</itemPath>
@@ -693,6 +668,7 @@
           <itemPath>../src/config/default/device_vectors.h</itemPath>
           <itemPath>../src/config/default/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/default/device_cache.h</itemPath>
+          <itemPath>../src/config/default/config.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/framework_defs.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
@@ -848,38 +824,74 @@
           <itemPath>../src/packs/WBZ451_DFP/wbz451.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="third_party" displayName="third_party" projectFiles="true">
-        <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
-          <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
-            <logicalFolder name="port" displayName="port" projectFiles="true">
-              <logicalFolder name="pic32" displayName="pic32" projectFiles="true">
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
-            <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ext_xmss.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ext_lms.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_xmss.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sm3.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ext_kyber.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sphincs.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/kyber.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/dilithium.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/hpke.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/lms.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_kyber.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sm4.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sm2.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/xmss.h</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_lms.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
+      <logicalFolder name="system" displayName="system" projectFiles="true">
+        <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
+          <itemPath>../src/config/default/system/tmr/sys_tmr.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
         <logicalFolder name="port" displayName="port" projectFiles="true">
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_pukcl_functions.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_PrimeGen_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Hardware_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_rsa_pukcl.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Fill_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_sam6149.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_SelfTest_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEcDsa_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Comp_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_CRT_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GCD_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_sam6156.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Swap_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Rng_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccMul_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Headers_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha224_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_RedMod_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_sam11105.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccAdd_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_hwInt.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_ecc_ba414e.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Rc_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEcDsa_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccQuickDualMul_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_JumpTable_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_cf_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_FastCopy_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Fmult_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_rng_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccAddSub_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_typedef_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccDbl_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccConv_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccDbl_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_u2238.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_ecc_pukcl.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_sam6150.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha256_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha384_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Div_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha512_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha1_hw.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Smult_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Square_pb.h</itemPath>
           <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/pic32mz-crypt.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ClearFlags_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccMul_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_CondCopy_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_pukcl_definitions.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_crya_saml11.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccConv_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_mapping_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccAdd_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_hwInt.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ExpMod_pb.h</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Services_pb.h</itemPath>
         </logicalFolder>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/blake2-impl.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_operations.h</itemPath>
@@ -982,26 +994,7 @@
             <itemPath>../src/config/default/bsp/bsp.c</itemPath>
           </logicalFolder>
           <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-            <logicalFolder name="common_crypto"
-                           displayName="common_crypto"
-                           projectFiles="true">
-              <logicalFolder name="src" displayName="src" projectFiles="true">
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Aead_Cipher.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Hash_WolfcryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Kas.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Sym_WolfcryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Aead_WolfCryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_DigSign_WolfcryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_RNG_WolfcryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Kas_WolfcryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_DigSign.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Mac_Cipher.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Mac_WolfCryptWrapper.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Sym_Cipher.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_RNG.c</itemPath>
-                <itemPath>../src/config/default/crypto/common_crypto/src/MCHP_Crypto_Hash.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
+            <itemPath>../src/config/default/crypto/src/crypto.c</itemPath>
           </logicalFolder>
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
             <logicalFolder name="IEEE_802154_PHY"
@@ -1152,9 +1145,6 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/aes_ecb.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/aes_ccm.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/sha256.cpp</itemPath>
-                      <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/ecdsa.cpp</itemPath>
-                      <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/ecdsa_tinycrypt.cpp</itemPath>
-                      <itemPath>../src/config/default/driver/thread/openthread/src/core/crypto/pbkdf2_cmac.cpp</itemPath>
                     </logicalFolder>
                     <logicalFolder name="diags" displayName="diags" projectFiles="true">
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/diags/factory_diags.cpp</itemPath>
@@ -1262,6 +1252,7 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/anycast_locator.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/dua_manager.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/tmf.cpp</itemPath>
+                      <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/mle_tlvs.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/time_sync_service.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/uri_paths.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/thread/mle.cpp</itemPath>
@@ -1280,6 +1271,7 @@
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/ping_sender.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/channel_monitor.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/jam_detector.cpp</itemPath>
+                      <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/power_calibration.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/history_tracker.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/heap.cpp</itemPath>
                       <itemPath>../src/config/default/driver/thread/openthread/src/core/utils/slaac_address.cpp</itemPath>
@@ -1505,124 +1497,104 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="third_party" displayName="third_party" projectFiles="true">
-        <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
-          <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
-            <logicalFolder name="port" displayName="port" projectFiles="true">
-              <logicalFolder name="pic32" displayName="pic32" projectFiles="true">
-                <itemPath>../src/third_party/wolfssl/wolfcrypt/src/port/pic32/pic32mz-crypt.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-            <logicalFolder name="src" displayName="src" projectFiles="true">
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sm4.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_xmss_impl.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/md5.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_x86_64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sakke.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/arc4.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/fe_448.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sm2.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_c64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_arm64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/random.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ext_lms.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/curve448.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/blake2s.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ecc_fp.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/blake2b.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/memory.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_int.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_xmss.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_lms.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_port.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_arm64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/dilithium.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sha512.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/asm.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/signature.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/hmac.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/pkcs12.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ext_kyber.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_c32.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_dsp32.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ripemd.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/siphash.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/chacha.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sphincs.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wolfmath.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ext_xmss.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/srp.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/chacha20_poly1305.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_x86_64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/tfm.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/kdf.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/pwdbased.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/camellia.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_c32.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ge_low_mem.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_dsp.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ge_operations.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/compress.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sha256.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/md4.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/hpke.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/eccsi.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ed25519.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ecc.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_arm32.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/dh.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wolfevent.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/coding.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_cortexm.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sm3.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/falcon.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sha3.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/pkcs7.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_pkcs11.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_cortexm.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/aes.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/dsa.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/error.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/rc2.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/hash.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_kyber.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/fe_operations.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_arm32.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/asn.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_sm2_armthumb.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_encrypt.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ed448.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/integer.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/cryptocb.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/logging.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_c64.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sha.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/poly1305.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/fe_low_mem.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/sp_armthumb.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/wc_kyber_poly.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/md2.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/curve25519.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/ge_448.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/des3.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/rsa.c</itemPath>
-              <itemPath>../src/third_party/wolfssl/wolfcrypt/src/cmac.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
-            <logicalFolder name="src" displayName="src" projectFiles="true">
-              <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
-              </logicalFolder>
-            </logicalFolder>
-            <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
-      </logicalFolder>
       <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
+        <logicalFolder name="port" displayName="port" projectFiles="true">
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam6156.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha512_sam6156.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam6156.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_pukcl.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_wolfcryptcb.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_sam6149.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam6156.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_u2242.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_u2238.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_ba414e.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_sam6334.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha384_sam6156.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rsa_pukcl.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sam_u2803.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam11105.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam11105.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam11105.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_tdes_sam6150.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/pic32mz-crypt.c</itemPath>
+          <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_pukcl_functions.c</itemPath>
+        </logicalFolder>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_encrypt.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/tfm.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_448.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/srp.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs12.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cryptocb.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/coding.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sakke.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_operations.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_operations.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed25519.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/des3.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/poly1305.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/logging.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/camellia.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_dsp.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pwdbased.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cmac.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_cortexm.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve448.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c64.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ripemd.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed448.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_low_mem.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/asn.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rsa.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md4.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_port.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/memory.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md2.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm64.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/eccsi.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/signature.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfevent.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hmac.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/siphash.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve25519.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha256.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs7.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/dsa.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/aes.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/error.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha20_poly1305.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_low_mem.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_x86_64.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/falcon.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc_fp.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/compress.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_pkcs11.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_armthumb.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/dh.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/arc4.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha3.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_448.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c32.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2b.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md5.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm32.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfmath.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_dsp32.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/integer.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/asm.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2s.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/random.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hash.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha512.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_int.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/kdf.c</itemPath>
       </logicalFolder>
       <itemPath>../src/app_idle_task.c</itemPath>
       <itemPath>../src/app_user_edits.c</itemPath>
@@ -1644,12 +1616,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ_DFP" vendor="Microchip" version="1.2.230"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CX-BZ_DFP" vendor="Microchip" version="1.2.230"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1684,15 +1656,13 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe"
-                  value="-include&quot;../src/config/default/driver/thread/inc/openthread_stack_config.h&quot;"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/crypto/wolfcrypt;../src/config/default/driver//IEEE_802154_PHY/pal/inc;../src/config/default/driver//IEEE_802154_PHY/phy/inc/;../src/config/default/driver//IEEE_802154_PHY/resources/buffer/inc/;../src/config/default/driver//IEEE_802154_PHY/resources/queue/inc/;../src/config/default/driver/thread/inc;../src/config/default/driver/thread/inc/crypto;../src/config/default/driver/thread/openthread/examples/platforms;../src/config/default/driver/thread/openthread/examples/platforms/utils;../src/config/default/driver/thread/openthread/include;../src/config/default/driver/thread/openthread/src;../src/config/default/driver/thread/openthread/src/core;../src/config/default/driver/thread/openthread/third_party/mbedtls/repo/include;../src/config/default/driver/thread/openthread/third_party/mbedtls/repo/library;../src/config/default/driver/thread/openthread/third_party/tcplp;../src/config/default/driver/thread/openthread/third_party/tcplp/bsdtcp;../src/config/default/driver/thread/openthread/third_party/tcplp/bsdtcp/cc;../src/config/default/driver/thread/openthread/third_party/tcplp/lib;../src/config/default/driver/thread/src;../src/config/default/driver/thread/src/crypto;../src/config/default/driver/threadopethread/src/ncp;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;../src/third_party/wolfcrypt;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl;../src/third_party/wolfssl/wolfssl/wolfcrypt"/>
+                  value="../src;../src/config/default;../src/config/default/driver//IEEE_802154_PHY/pal/inc;../src/config/default/driver//IEEE_802154_PHY/phy/inc/;../src/config/default/driver//IEEE_802154_PHY/resources/buffer/inc/;../src/config/default/driver//IEEE_802154_PHY/resources/queue/inc/;../src/config/default/driver/thread/inc;../src/config/default/driver/thread/inc/crypto;../src/config/default/driver/thread/openthread/examples/platforms;../src/config/default/driver/thread/openthread/examples/platforms/utils;../src/config/default/driver/thread/openthread/include;../src/config/default/driver/thread/openthread/src;../src/config/default/driver/thread/openthread/src/core;../src/config/default/driver/thread/openthread/third_party/mbedtls/repo/include;../src/config/default/driver/thread/openthread/third_party/mbedtls/repo/library;../src/config/default/driver/thread/openthread/third_party/tcplp;../src/config/default/driver/thread/openthread/third_party/tcplp/bsdtcp;../src/config/default/driver/thread/openthread/third_party/tcplp/bsdtcp/cc;../src/config/default/driver/thread/openthread/third_party/tcplp/lib;../src/config/default/driver/thread/src;../src/config/default/driver/thread/src/crypto;../src/config/default/driver/threadopethread/src/ncp;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1702,7 +1672,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="ENABLE_LARGE_BUFFER;ENABLE_QUEUE_CAPACITY;HAVE_CONFIG_H;UDP_DEMO;WOLFSSL_IGNORE_FILE_WARN;WOLFSSL_USER_SETTINGS"/>
+                  value="ENABLE_LARGE_BUFFER;ENABLE_QUEUE_CAPACITY;HAVE_CONFIG_H;UDP_DEMO;WOLFSSL_IGNORE_FILE_WARN"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value="-fcommon"/>
@@ -1744,7 +1714,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1784,8 +1753,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe"
-                  value="-include&quot;../src/config/default/driver/thread/inc/openthread_stack_config.h&quot;"/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1815,7 +1782,6 @@
         <appendMe value="-include&quot;../src/config/default/driver/thread/inc/openthread_stack_config.h&quot;"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -1863,8 +1829,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1000000-2001ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/proj/ew24/threadApp/ot_robo_gateway/firmware/ot_robo_gateway.X/debug/default/ot_robo_gateway_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
@@ -1909,6 +1873,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -1950,6 +1915,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -1959,6 +1925,7 @@
       </Tool>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -1972,6 +1939,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -2004,6 +1972,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>

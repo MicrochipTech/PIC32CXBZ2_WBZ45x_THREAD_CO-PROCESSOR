@@ -358,7 +358,7 @@ static void processSolarGetCmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** arg
 //    threadUdpSend((otIp6Address *)&demoDevices[atoi(argv[1])].devAddr, 5, (uint8_t *)&demoCommand);
     
     devTypeSolarReport_t *solar = (devTypeSolarReport_t *)demoDevices[atoi(argv[1])].devMsg;
-    app_printf("Solar: Volt-%0.2f, Intensity-%0.2f\r", (float)solar->voltage, (float)solar->lightIntensity);;
+    app_printf("Solar: Volt-%0.2f, Intensity-%0.2f\r", (float)solar->voltage, (float)solar->lightIntensity);
 }
 
 static void processAccessSetCmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
@@ -517,7 +517,10 @@ void APP_Tasks ( void )
                 }
                 else if(p_appMsg->msgId == APP_MSG_OT_SEND_ADDR_TMR_EVT)
                 {
-                    threadSendIPAddr();
+#ifndef GATEWAY_HOST_CONNECTED
+                    app_printf("Discovering Devices...\r\n");
+#endif
+                    threadSendPeriodicMsg();
                 }
                 
             }
@@ -660,37 +663,42 @@ void threadReceiveData(const otMessageInfo *aMessageInfo, uint16_t length, uint8
     }
     else if(MSG_TYPE_LIGHT_REPORT == rxMsg->msgType)
     {
-//        devTypeThermostatSensorReport_t *sensor;
-//        sensor = (devTypeThermostatSensorReport_t *)rxMsg->msg;
-//        app_printf("Temp Sensor - %0.2f\r\n", (float)sensor->temperature);
+#ifndef GATEWAY_HOST_CONNECTED
+        devTypeRGBLight_t *lightReport = (devTypeRGBLight_t *)rxMsg->msg;
+        app_printf("On/Off-%d, H - %03d, S - %03d, V - %03d\r", lightReport->onOff, lightReport->hue, lightReport->saturation, lightReport->level);
+#endif
         updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_THERMO_SENSOR_REPORT == rxMsg->msgType)
     {
-//        devTypeThermostatSensorReport_t *sensor;
-//        sensor = (devTypeThermostatSensorReport_t *)rxMsg->msg;
-//        //app_printf("Temp Sensor - %0.2f\r\n", (float)sensor->temperature);
+#ifndef GATEWAY_HOST_CONNECTED
+        devTypeThermostatSensorReport_t *tempReport = (devTypeThermostatSensorReport_t *)rxMsg->msg;
+        app_printf("Temp-%0.2f\r", tempReport->temperature);
+#endif
         updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_THERMO_HVAC_REPORT == rxMsg->msgType)
     {
-//        devTypeThermostatHVACReport_t *hvac;
-//        hvac = (devTypeThermostatHVACReport_t *)rxMsg->msg;
-//        //app_printf("Set Temp-%0.2f, On/Off-%d\r\n", (float)hvac->setPoint, hvac->onOffStatus);
+#ifndef GATEWAY_HOST_CONNECTED
+        devTypeThermostatHVACReport_t *hvacReport = (devTypeThermostatHVACReport_t *)rxMsg->msg;
+        app_printf("Set Temp-%0.2f, On/Off-%d\r", (float)hvacReport->setPoint, hvacReport->onOffStatus);
+#endif
         updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_SOLAR_REPORT == rxMsg->msgType)
     {
-//        devTypeSolarReport_t *solar;
-//        solar = (devTypeSolarReport_t *)rxMsg->msg;
-//        app_printf("Solar: Volt-%0.2f, Intensity-%0.2f\r\n", (float)solar->voltage, (float)solar->lightIntensity);
+#ifndef GATEWAY_HOST_CONNECTED
+        devTypeSolarReport_t *solar = (devTypeSolarReport_t *)rxMsg->msg;
+        app_printf("Solar: Volt-%0.2f, Intensity-%0.2f\r", (float)solar->voltage, (float)solar->lightIntensity);
+#endif
         updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_ACCESS_CONTROL_REPORT == rxMsg->msgType)
     {
-//        devTypeAccessControlReport_t *access;
-//        access = (devTypeAccessControlReport_t *)rxMsg->msg;
-//        //app_printf("Garage Door - %d\r\n", access->garageDoor);
+#ifndef GATEWAY_HOST_CONNECTED
+        devTypeAccessControlReport_t *accessReport = (devTypeAccessControlReport_t *)rxMsg->msg;
+        app_printf("Garage Door - %d\r", accessReport->garageDoor);
+#endif
         updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
 }

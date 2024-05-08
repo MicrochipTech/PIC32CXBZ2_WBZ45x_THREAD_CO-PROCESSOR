@@ -192,9 +192,9 @@ static const KEY_SEQ_DCPT keySeqTbl[] =
 
 // prototypes
 
-//static void     CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+static void     CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void     CommandQuit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // command quit
-//static void     CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // help
+static void     CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // help
 
 static int      StringToArgs(char *str, char *argv[], size_t argvSize);
 static void     ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO);      // parse the command buffer
@@ -225,9 +225,9 @@ static const SYS_CMD_API sysConsoleApi =
 // built-in command table
 static const SYS_CMD_DESCRIPTOR    builtinCmdTbl[]=
 {
-    //{"reset",   CommandReset,   ": Reset host"},
+    {"reset",   CommandReset,   ": Reset host"},
     {"q",       CommandQuit,    ": quit command processor"},
-    //{"help",    CommandHelp,    ": help"},
+    {"help",    CommandHelp,    ": help"},
 };
 
 // *****************************************************************************
@@ -716,7 +716,7 @@ bool SYS_CMD_DELETE(SYS_CMD_DEVICE_NODE* pDeviceNode)
         {
             cmdIODevList.head = p_listnode->next;
         }
-        free(pDevNode);
+        OSAL_Free(pDevNode);
         return true;
     }
 
@@ -731,7 +731,7 @@ bool SYS_CMD_DELETE(SYS_CMD_DEVICE_NODE* pDeviceNode)
             if (cmdIODevList.tail==pDevNode) {
                 cmdIODevList.tail = pre_listnode;
             }
-            free(pDevNode);
+            OSAL_Free(pDevNode);
             return true;
         }
         pre_listnode = p_listnode;
@@ -867,14 +867,14 @@ static char GetCommandCharacter(const void* cmdIoParam)
 }
 
 // implementation
-//static void CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
-//{
-//    const void* cmdIoParam = pCmdIO->cmdIoParam;
-//    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** System Reboot ***\r\n" );
-//
-//    SYS_RESET_SoftwareReset();
-//
-//}
+static void CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** System Reboot ***\r\n" );
+
+    SYS_RESET_SoftwareReset();
+
+}
 
 // quit
 static void CommandQuit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
@@ -898,99 +898,99 @@ static void CommandQuit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
             cmdIODevList.head = cmdIODevList.head->next;
         }
 
-        free(pCmdIoNode);
+        OSAL_Free(pCmdIoNode);
     }
 
     // no longer run the SYS_CMD_Tasks
     stopRequested = 1;
 }
 
-//static void CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
-//{
-//    uint32_t ix;
-//    int32_t groupIx;
-//    const SYS_CMD_DESCRIPTOR*  pDcpt;
-//    const SYS_CMD_DESCRIPTOR_TABLE* pTbl, *pDTbl;
-//    const void* cmdIoParam = pCmdIO->cmdIoParam;
-//
-//    if(argc == 1)
-//    {   // no params help; display basic info
-//        bool hadHeader = false;
-//        pTbl = usrCmdTbl;
-//        for (groupIx=0; groupIx < MAX_CMD_GROUP; groupIx++)
-//        {
-//            if (pTbl->pCmd != NULL)
-//            {
-//                if(!hadHeader)
-//                {
-//                    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "------- Supported command groups ------");
-//                    hadHeader = true;
-//                }
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pTbl->cmdGroupName);
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pTbl->cmdMenuStr);
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
-//            }
-//            pTbl++;
-//        }
-//
-//        // display the basic commands
-//        (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "---------- Built in commands ----------");
-//
-//        ix = 0;
-//        pDcpt = builtinCmdTbl;
-//        while(ix < (sizeof(builtinCmdTbl)/sizeof(*builtinCmdTbl)))
-//        {
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdStr);
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdDescr);
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
-//            ix++;
-//            pDcpt++;
-//        }
-//
-//        (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM);
-//    }
-//    else
-//    {   // we have a command group name
-//        pDTbl = NULL;
-//        pTbl = usrCmdTbl;
-//        for (groupIx=0; groupIx < MAX_CMD_GROUP; groupIx++)
-//        {
-//            if (pTbl->pCmd != NULL)
-//            {
-//                if(strcmp(pTbl->cmdGroupName, argv[1]) == 0)
-//                {   // match
-//                    pDTbl = pTbl;
-//                    break;
-//                }
-//            }
-//            pTbl++;
-//        }
-//
-//        if(pDTbl != NULL)
-//        {
-//            ix = 0;
-//            pDcpt = pDTbl->pCmd;
-//            while(ix < (uint32_t)pDTbl->nCmds)
-//            {
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdStr);
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdDescr);
-//                (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
-//                ix++;
-//                pDcpt++;
-//            }
-//
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM);
-//        }
-//        else
-//        {
-//            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "Unknown command group. Try help" LINE_TERM );
-//        }
-//    }
-//
-//}
+static void CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{
+    uint32_t ix;
+    int32_t groupIx;
+    const SYS_CMD_DESCRIPTOR*  pDcpt;
+    const SYS_CMD_DESCRIPTOR_TABLE* pTbl, *pDTbl;
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    if(argc == 1)
+    {   // no params help; display basic info
+        bool hadHeader = false;
+        pTbl = usrCmdTbl;
+        for (groupIx=0; groupIx < MAX_CMD_GROUP; groupIx++)
+        {
+            if (pTbl->pCmd != NULL)
+            {
+                if(!hadHeader)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "------- Supported command groups ------");
+                    hadHeader = true;
+                }
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pTbl->cmdGroupName);
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pTbl->cmdMenuStr);
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
+            }
+            pTbl++;
+        }
+
+        // display the basic commands
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "---------- Built in commands ----------");
+
+        ix = 0;
+        pDcpt = builtinCmdTbl;
+        while(ix < (sizeof(builtinCmdTbl)/sizeof(*builtinCmdTbl)))
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdStr);
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdDescr);
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
+            ix++;
+            pDcpt++;
+        }
+
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM);
+    }
+    else
+    {   // we have a command group name
+        pDTbl = NULL;
+        pTbl = usrCmdTbl;
+        for (groupIx=0; groupIx < MAX_CMD_GROUP; groupIx++)
+        {
+            if (pTbl->pCmd != NULL)
+            {
+                if(strcmp(pTbl->cmdGroupName, argv[1]) == 0)
+                {   // match
+                    pDTbl = pTbl;
+                    break;
+                }
+            }
+            pTbl++;
+        }
+
+        if(pDTbl != NULL)
+        {
+            ix = 0;
+            pDcpt = pDTbl->pCmd;
+            while(ix < (uint32_t)pDTbl->nCmds)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " *** ");
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdStr);
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, pDcpt->cmdDescr);
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, " ***");
+                ix++;
+                pDcpt++;
+            }
+
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM);
+        }
+        else
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM "Unknown command group. Try help" LINE_TERM );
+        }
+    }
+
+}
 
 static void ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO)
 {

@@ -14,7 +14,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,7 +38,6 @@
 // DOM-IGNORE-END
 #include "FreeRTOS.h"
 #include "task.h"
-#include "definitions.h"
 
 void vApplicationIdleHook( void );
 void vApplicationTickHook( void );
@@ -134,7 +133,6 @@ void vApplicationIdleHook( void )
     important that vApplicationIdleHook() is permitted to return to its calling
     function, because it is the responsibility of the idle task to clean up
     memory allocated by the kernel to any task that has since been deleted. */
-    app_idle_task();
 }
 
 /*-----------------------------------------------------------*/

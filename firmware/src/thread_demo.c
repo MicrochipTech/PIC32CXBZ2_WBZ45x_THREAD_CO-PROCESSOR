@@ -172,7 +172,7 @@ void threadTmrCb(void)
     OSAL_QUEUE_Send(&appData.appQueue, &appMsg, 0);
 }
 
-void threadSendIPAddr(void)
+void threadSendPeriodicMsg(void)
 {
     devMsgType_t demoCommand;
     
@@ -274,7 +274,7 @@ void threadHandleStateChange(void)
         if(!dataInitialized)
         {
             //if MTD, Start timer to send periodic data, IF FTD, do nothing.
-            app_printf("App_Log: Device State Child. Start app timer\n");
+            app_printf("App_Log: Device State Child. Start app timer\r\n");
             xTimerStart(sAppTimerHandle, 0);
             threadInitData();
             dataInitialized = true;
@@ -288,7 +288,7 @@ void threadHandleStateChange(void)
         if(!dataInitialized)
         {            
             //Start timer to send periodic data 
-            app_printf("App_Log: Device State Router. Start app timer\n");
+            app_printf("App_Log: Device State Router. Start app timer\r\n");
             xTimerStart(sAppTimerHandle, 0);
             threadInitData();
             dataInitialized = true;

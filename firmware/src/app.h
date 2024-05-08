@@ -76,6 +76,9 @@ extern "C" {
 // *****************************************************************************
 
 #define MESSAGE_INFO_INDEX      1
+
+
+//#define GATEWAY_HOST_CONNECTED
     
 /* Application states
 

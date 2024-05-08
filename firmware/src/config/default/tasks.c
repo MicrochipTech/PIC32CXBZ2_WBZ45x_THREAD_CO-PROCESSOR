@@ -71,12 +71,12 @@ void lSYS_CMD_Tasks(  void *pvParameters  )
 }
 
 
+
+
+
 extern void taskOpenThread(void *pvParam);
 
 extern TaskHandle_t taskHandleOpenThread;
-
-
-
 
 
 /* Handle for the APP_Tasks. */
@@ -126,13 +126,13 @@ void SYS_Tasks ( void )
     
 
     /* Maintain Middleware & Other Libraries */
-    (void) xTaskCreate(taskOpenThread,
+    
+(void) xTaskCreate(taskOpenThread,
                        "ot-task",
                        4096,
                        NULL,
                        3,
                        &taskHandleOpenThread);
-
 
 
 
