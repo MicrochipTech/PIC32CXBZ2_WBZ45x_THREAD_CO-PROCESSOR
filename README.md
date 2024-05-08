@@ -112,7 +112,7 @@ Supported Propreitary Device Types:<br>
 
 ![](Docs/Console.png)
 
-![](Docs/Console_COnfig.png)
+![](Docs/Console_Config.png)
 
 - Right Click on UART of CONSOLE and add SERCOM0 as below. Ensure the configurations.
 
