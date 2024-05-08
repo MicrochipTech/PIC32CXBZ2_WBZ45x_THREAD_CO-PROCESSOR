@@ -32,13 +32,14 @@ Checkout the <a href="https://microchipsupport.force.com/s/" target="_blank">Tec
 
 This application enables the users to create a Thread Co-Processor on Full Thread Device. Thread Co-Processor is a supporting implementation to develop a Gateway Application on an other Host processor.
 
-Supported Propreitory Device Types:<br>
-	1. RGB Light control<br>
-	2. Temperature Sensor<br>
-	3. HVAC<br>
-	4. Garage Control<br>
-	5. Solar Control<br>
-	6. Access Control<br>
+Supported Propreitary Device Types:<br>
+    1. Temperature Sensor<br>
+    2. HVAC<br>
+    3. RGB Light control **<br>
+    4. Garage Control **<br>
+    5. Solar Control **<br>
+
+** - Details will be updated soon.
 
 ![](Docs/intro.png)
 
@@ -56,21 +57,21 @@ Supported Propreitory Device Types:<br>
 - [MPLAB X IDE ](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs)
 
     - Version: 6.20
-	- XC32 Compiler v4.40
-	- MPLAB® Code Configurator v5.5.0
-	- PIC32CX-BZ_DFP v1.2.243
-	- MCC Harmony
-	  - csp version: v3.18.5
-	  - core version: v3.13.4
-	  - bsp version: v3.18.0
-	  - CMSIS-FreeRTOS: v11.1.0
-	  - dev_packs: v3.18.1
-	  - wolfssl version: v5.4.0
-	  - crypto version: v3.8.1
-	  - wireless_pic32cxbz_wbz: v1.3.0
-	  - wireless_15_4_phy version: v1.1.1
-	  - wireless_thread: v1.0.1
-	  - openthread version : mchp_harmony_wireless_thread_v1.0.0
+    - XC32 Compiler v4.40
+    - MPLAB® Code Configurator v5.5.0
+    - PIC32CX-BZ_DFP v1.2.243
+    - MCC Harmony
+      - csp version: v3.18.5
+      - core version: v3.13.4
+      - bsp version: v3.18.0
+      - CMSIS-FreeRTOS: v11.1.0
+      - dev_packs: v3.18.1
+      - wolfssl version: v5.4.0
+      - crypto version: v3.8.1
+      - wireless_pic32cxbz_wbz: v1.3.0
+      - wireless_15_4_phy version: v1.1.1
+      - wireless_thread: v1.0.1
+      - openthread version : mchp_harmony_wireless_thread_v1.0.0
 
 - Any Serial Terminal application like [TERA TERM](https://download.cnet.com/Tera-Term/3000-2094_4-75766675.html) terminal application
 
@@ -177,3 +178,78 @@ Follow the steps provided in the link to [Build and program the application](htt
 ![](Docs/App_Print.png)
 
 - The Thread Co-Processor is now discovering other Thread devices on the network. Network configuration is available in "...\firmware\src\thread_demo.h"
+
+### Application Overview
+
+-This is a Proprietary implementation on Thread Protocol.
+
+-Application maintains an array of structure to store the information of other Thread devices available in the network, with provision to be discovered using proprietary messages.
+
+-Structure used to store the details is as follows...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*typedef struct demoDevice_t{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otIp6Address devAddr; ///< The IPv6 address.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool isAvailable;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint8_t devType;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint8_t devNameSize;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint8_t devName[MAX_DEMO_NAME_SIZE];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint8_t devMsgSize;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint32_t devMsg[(MAX_DEMO_MSG_SIZE / 4) + 1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} demoDevice_t;*
+
+- Used Definitions<br>
+    <ins>devType</ins>: <br>
+    #define DEVICE_TYPE_THERMOSTAT_SENSOR   (0x3U)<br>
+    #define DEVICE_TYPE_THERMOSTAT_HVAC     (0x4U)<br>
+
+-For simplicity of application implementation on the host, the devices are referred using index of the array, instead of IPv6 addresses.
+
+### Commands
+
+1. <ins>getDeviceInfo</ins>:
+    Gets the Device information like Device Type and Device Name
+    - Syntax:<br>
+        getDeviceInfo [devIndex]
+    - Parameters:<br>
+        devIndex - Index of the device to fetch the information.
+    - Response:<br>
+        Type-[devType] Name - [devName]<br>
+        E.g. Type-2 Name - Light
+        
+2. <ins>thermoSensorSet</ins>:
+    Sets the Thermostat Sensor with reporting HVAC device address (to report periodically) and report interval( to report to Thread Co-Processor also).
+    - Syntax:<br>
+        thermoSensorSet [devIndex] [hvacDevIndex] [reportInteval]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_THERMOSTAT_SENSOR.<br>
+        hvacDevIndex - Index of the device joined as DEVICE_TYPE_THERMOSTAT_HVAC.<br>
+        reportInteval - Time in seconds to configure the reporting interval(Thread Co-Processor and Thermostat HVAC).<br>
+    - Response:None
+
+3. <ins>thermoSensorGet</ins>:
+    Gets the Thermostat Sensor reported value.
+    - Syntax:<br>
+        thermoSensorGet [devIndex]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_THERMOSTAT_SENSOR.
+    - Response:<br>
+        Temp-[temperature]<br>
+        E.g. Temp-30.0
+
+4. <ins>thermoHVACSet</ins>:
+    Sets the Thermostat HVAC with set point to Turn On/Off HVAC.
+    - Syntax:<br>
+        thermoHVACSet [devIndex] [setPoint]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_THERMOSTAT_HVAC.<br>
+        setPoint - Temperature value in °C times 10. E.g. to set 29.5°C, provide 295.
+    - Response:None
+
+5. <ins>thermoHVACGet</ins>:
+    Gets the Thermostat Sensor reported value.
+    - Syntax:<br>
+        thermoHVACGet [devIndex]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_THERMOSTAT_HVAC.
+    - Response:<br>
+        Set Temp-[setTemp], On/Off-[hvacOnOff]<br>
+        E.g. Set Temp-30.5, On/Off-1
