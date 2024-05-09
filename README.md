@@ -182,7 +182,6 @@ Follow the steps provided in the link to [Build and program the application](htt
 ### Application Overview
 
 -This is a Proprietary implementation on Thread Protocol.
-
 -Application maintains an array of structure to store the information of other Thread devices available in the network, with provision to be discovered using proprietary messages.
 
 -Structure used to store the details is as follows...<br>
@@ -234,6 +233,9 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:<br>
         Temp-[temperature]<br>
         E.g. Temp-30.0
+
+#### Note
+For the application scenarios explained in this application you can navigate to the following links [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR) and [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT).
 
 4. <ins>thermoHVACSet</ins>:
     Sets the Thermostat HVAC with set point to Turn On/Off HVAC.
