@@ -1,15 +1,9 @@
 [submodule "THREAD_SOLAR_PANEL"]
 	path = THREAD_SOLAR_PANEL
 	url = https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_SOLAR_PANEL
-[submodule "THREAD_TEMPERATURE_SENSOR"]
-	path = THREAD_TEMPERATURE_SENSOR
-	url = https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR.git
 [submodule "THREAD_LIGHTING"]
 	path = THREAD_LIGHTING
 	url = https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING
-[submodule "THREAD_HVAC"]
-	path = THREAD_HVAC
-	url = https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_HVAC
 [submodule "THREAD_GARAGE_DOOR"]
 	path = THREAD_GARAGE_DOOR
 	url = https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_GARAGE_DOOR
