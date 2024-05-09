@@ -33,8 +33,8 @@ Checkout the <a href="https://microchipsupport.force.com/s/" target="_blank">Tec
 This application enables the users to create a Thread Co-Processor on Full Thread Device. Thread Co-Processor is a supporting implementation to develop a Gateway Application on an other Host processor.
 
 Supported Propreitary Device Types:<br>
-    1. Temperature Sensor<br>
-    2. HVAC<br>
+    1. [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR)<br>
+    2. [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT)<br>
     3. RGB Light control **<br>
     4. Garage Control **<br>
     5. Solar Control **<br>
