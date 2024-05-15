@@ -35,7 +35,7 @@ This application enables the users to create a Thread Co-Processor on Full Threa
 Supported Propreitary Device Types:<br>
     1. [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR)<br>
     2. [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT)<br>
-    3. RGB Light control **<br>
+    3. [RGB Light control](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING)<br>
     4. Garage Control **<br>
     5. Solar Control **<br>
 
@@ -101,6 +101,8 @@ Supported Propreitary Device Types:<br>
 - Ensure the configuration of FreeRTOS is as below. Total heap size should be 61440.
 
 ![](Docs/RTOS_Config.png)
+
+- In FreeRTOS configuration options, go to RTOS Configurations->Include components and make sure xTaskAbortDelay is selected.
 
 - From Device Resources, go to Libraries->Harmony->System Services and add COMMAND. Ensure the below configuration.
 
@@ -195,12 +197,23 @@ Follow the steps provided in the link to [Build and program the application](htt
 
 - Used Definitions<br>
     <ins>devType</ins>: <br>
+    #define DEVICE_TYPE_LIGHT               (0x2U)<br>
     #define DEVICE_TYPE_THERMOSTAT_SENSOR   (0x3U)<br>
     #define DEVICE_TYPE_THERMOSTAT_HVAC     (0x4U)<br>
 
--For simplicity of application implementation on the host, the devices are referred using index of the array, instead of IPv6 addresses.
+**Note: Devices added to the network will be stored in an array of structure(demoDevice_t). For simplicity in application implementation on the host, the devices are referred using index of the array instead of IPv6 addresses. So application user can send the individual commands using the index of device. The devType in each index can be fetched by using "getDeviceInfo" command.**
 
 ### Commands
+
+| Command | Supported Device Type | Application Link|
+|---------|-----------------------|-----------------|
+| getDeviceInfo | All Devices | -- |
+| thermoSensorSet | Thread temperature sensor | [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR) |
+| thermoSensorGet | Thread temperature sensor | [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR) |
+| thermoHVACSet | Thread Thermostat | [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT) |
+| thermoHVACGet | Thread Thermostat | [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT) |
+| lightSet | Thread RGB Light | [Thread RGB Light](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING) |
+| lightGet | Thread RGB Light | [Thread RGB Light](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING) |
 
 1. <ins>getDeviceInfo</ins>:
     Gets the Device information like Device Type and Device Name
@@ -232,9 +245,6 @@ Follow the steps provided in the link to [Build and program the application](htt
         Temp-[temperature]<br>
         E.g. Temp-30.0
 
-#### Note
-For the application scenarios explained in this application you can navigate to the following links [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR) and [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT).
-
 4. <ins>thermoHVACSet</ins>:
     Sets the Thermostat HVAC with set point to Turn On/Off HVAC.
     - Syntax:<br>
@@ -253,3 +263,25 @@ For the application scenarios explained in this application you can navigate to 
     - Response:<br>
         Set Temp-[setTemp], On/Off-[hvacOnOff]<br>
         E.g. Set Temp-30.5, On/Off-1
+
+6. <ins>lightSet</ins>:
+    Sets the On/Off and HSV value of RGB LED.
+    - Syntax:<br>
+        lightSet [devIndex] [onOff] [hue] [saturation] [value]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_LIGHT.
+		onOff - 1 for on and 0 for off.
+		hue - hue for RGB led.
+		saturation - saturation of RGB led.
+		value - value of RGB led.
+    - Response:None
+
+7. <ins>lightGet</ins>:
+    Gets the On/Off and HSV value of RGB LED.
+    - Syntax:<br>
+        lightGet [devIndex]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_LIGHT.
+    - Response:
+		On/Off-[onOff], H - [hue], S - [saturation], V - [value]
+		E.g. On/Off-1, H - 85, S - 255, V - 255
