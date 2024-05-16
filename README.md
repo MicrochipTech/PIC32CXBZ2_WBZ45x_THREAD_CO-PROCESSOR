@@ -41,6 +41,8 @@ Supported Propreitary Device Types:<br>
 
 ** - Details will be updated soon.
 
+![](Docs/Setup.png)
+
 | Tip | Go through the [overview](https://onlinedocs.microchip.com/oxy/GUID-2DB248AF-C243-496D-9819-969E43CA63BC-en-US-1/GUID-162D7BE7-3A35-4D12-AE09-EE84C6554377.html) for understanding few key Thread protocol concepts |
 | :- | :- |
 
