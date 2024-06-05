@@ -202,7 +202,8 @@ Follow the steps provided in the link to [Build and program the application](htt
     #define DEVICE_TYPE_LIGHT               (0x2U)<br>
     #define DEVICE_TYPE_THERMOSTAT_SENSOR   (0x3U)<br>
     #define DEVICE_TYPE_THERMOSTAT_HVAC     (0x4U)<br>
-
+	#define DEVICE_TYPE_SOLAR               (0x5U)<br>
+	
 **Note: Devices added to the network will be stored in an array of structure(demoDevice_t). For simplicity in application implementation on the host, the devices are referred using index of the array instead of IPv6 addresses. So application user can send the individual commands using the index of device. The devType in each index can be fetched by using "getDeviceInfo" command.**
 
 ### Commands
@@ -216,6 +217,8 @@ Follow the steps provided in the link to [Build and program the application](htt
 | thermoHVACGet | Thread Thermostat | [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT) |
 | lightSet | Thread RGB Light | [Thread RGB Light](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING) |
 | lightGet | Thread RGB Light | [Thread RGB Light](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING) |
+| solarSet | Thread Solar Panel | [Thread Solar Panel](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_SOLAR_PANEL) |
+| solarGet | Thread Solar Panel | [Thread Solar Panel](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_SOLAR_PANEL) |
 
 1. <ins>getDeviceInfo</ins>:
     Gets the Device information like Device Type and Device Name
@@ -287,3 +290,22 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:
 		On/Off-[onOff], H - [hue], S - [saturation], V - [value]
 		E.g. On/Off-1, H - 85, S - 255, V - 255
+
+8. <ins>solarSet</ins>:
+    Sets the Solar panel position.
+    - Syntax:<br>
+        solarSet [devIndex] [position]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_SOLAR.
+		POSITION - 0,1&2.		
+    - Response:None
+	
+9. <ins>solarGet</ins>:
+    Gets the On/Off and HSV value of RGB LED.
+    - Syntax:<br>
+        solarGet [devIndex]
+    - Parameters:<br>
+        devIndex - Index to the device with devType = DEVICE_TYPE_SOLAR.
+    - Response:
+		Solar volt - [value], Intensity - [value]
+		E.g. Solar volt - 4.5, Intensity - 100.75
