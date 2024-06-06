@@ -36,8 +36,8 @@ Supported Propreitary Device Types:<br>
     1. [Thread temperature sensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_TEMPERATURE_SENSOR)<br>
     2. [Thread Thermostat](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_THERMOSTAT)<br>
     3. [RGB Light control](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_LIGHTING)<br>
-    4. Garage Control **<br>
-    5. Solar Control **<br>
+    4. [Solar Panel](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_THREAD_SOLAR_PANEL)<br>
+    
 
 ** - Details will be updated soon.
 
