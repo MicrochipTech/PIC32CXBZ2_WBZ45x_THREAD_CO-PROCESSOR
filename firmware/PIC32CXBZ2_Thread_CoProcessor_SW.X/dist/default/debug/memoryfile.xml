@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/debug/PIC32CXBZ2_Thread_CoProcessor_SW.X.debug.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>1032192</length>
+      <used>356162</used>
+      <free>676030</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>131072</length>
+      <used>109710</used>
+      <free>21362</free>
+    </memory>
+  </executable>
+</project>

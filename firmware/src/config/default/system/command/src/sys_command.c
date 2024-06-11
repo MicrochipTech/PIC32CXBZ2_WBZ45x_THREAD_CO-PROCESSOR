@@ -451,7 +451,7 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
     {   // new command assembled
         if(pCmdIO->cmdEnd ==  pCmdIO->cmdBuff)
         {   // just an extra \n or \r
-            //(*pCmdApi->msg)(cmdIoParam, LINE_TERM promptStr);
+            (*pCmdApi->msg)(cmdIoParam, LINE_TERM promptStr);
             return;
         }
         (*pCmdApi->msg)(cmdIoParam, LINE_TERM);
@@ -460,7 +460,7 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
         pCmdIO->cmdEnd = pCmdIO->cmdBuff;
 
         ParseCmdBuffer(pCmdIO);
-        //(*pCmdApi->msg)(cmdIoParam, promptStr);
+        (*pCmdApi->msg)(cmdIoParam, promptStr);
     }
     else if(newCh == '\b')
     {
@@ -538,7 +538,7 @@ static void RunCmdTask(SYS_CMD_IO_DCPT* pCmdIO)
         }
         pCmdIO->ctrlBuff[0] = newCh;
 
-        //(*pCmdApi->msg)(cmdIoParam, pCmdIO->ctrlBuff);
+        (*pCmdApi->msg)(cmdIoParam, pCmdIO->ctrlBuff);
         *pCmdIO->cmdPnt = newCh;
         pCmdIO->cmdPnt++;
         CmdAdjustPointers(pCmdIO);

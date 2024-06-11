@@ -86,7 +86,11 @@ void addDemoDevice(const otIp6Address *addr, uint8_t nameSize, uint8_t *name, ui
         {
             if(false == demoDevices[index].isAvailable)
             {
-                app_printf("Add-%s\r\n", name);
+#ifndef GATEWAY_HOST_CONNECTED
+                app_printf("%d : Add-%s\r\n", index, name);
+#else
+                app_printf("Add-%s\r\n", index, name);
+#endif
                 memset(&demoDevices[index], 0x00, sizeof(demoDevice_t));
                 memcpy(&demoDevices[index].devAddr, addr, sizeof(otIp6Address));
                 demoDevices[index].devNameSize = nameSize;
@@ -106,6 +110,9 @@ void updateDemoStatus(const otIp6Address *devAddr, void *msg)
         if((0 == memcmp(devAddr, &demoDevices[index].devAddr, sizeof(otIp6Address))) 
                 && (demoDevices[index].isAvailable))
         {
+#ifndef GATEWAY_HOST_CONNECTED
+            app_printf("%d : ", index);
+#endif
             if(DEVICE_TYPE_THERMOSTAT_SENSOR == demoDevices[index].devType)
             {
                 memcpy(&demoDevices[index].devMsg, msg, sizeof(devTypeThermostatSensorReport_t));
