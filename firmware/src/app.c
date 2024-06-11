@@ -663,43 +663,43 @@ void threadReceiveData(const otMessageInfo *aMessageInfo, uint16_t length, uint8
     }
     else if(MSG_TYPE_LIGHT_REPORT == rxMsg->msgType)
     {
+        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
 #ifndef GATEWAY_HOST_CONNECTED
         devTypeRGBLight_t *lightReport = (devTypeRGBLight_t *)rxMsg->msg;
         app_printf("On/Off-%d, H - %03d, S - %03d, V - %03d\r", lightReport->onOff, lightReport->hue, lightReport->saturation, lightReport->level);
 #endif
-        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_THERMO_SENSOR_REPORT == rxMsg->msgType)
     {
+        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
 #ifndef GATEWAY_HOST_CONNECTED
         devTypeThermostatSensorReport_t *tempReport = (devTypeThermostatSensorReport_t *)rxMsg->msg;
         app_printf("Temp-%0.2f\r", tempReport->temperature);
 #endif
-        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_THERMO_HVAC_REPORT == rxMsg->msgType)
     {
+        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
 #ifndef GATEWAY_HOST_CONNECTED
         devTypeThermostatHVACReport_t *hvacReport = (devTypeThermostatHVACReport_t *)rxMsg->msg;
         app_printf("Set Temp-%0.2f, On/Off-%d\r", (float)hvacReport->setPoint, hvacReport->onOffStatus);
 #endif
-        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_SOLAR_REPORT == rxMsg->msgType)
     {
+        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
 #ifndef GATEWAY_HOST_CONNECTED
         devTypeSolarReport_t *solar = (devTypeSolarReport_t *)rxMsg->msg;
         app_printf("Solar: Volt-%0.2f, Intensity-%0.2f\r", (float)solar->voltage, (float)solar->lightIntensity);
 #endif
-        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
     else if(MSG_TYPE_ACCESS_CONTROL_REPORT == rxMsg->msgType)
     {
+        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
 #ifndef GATEWAY_HOST_CONNECTED
         devTypeAccessControlReport_t *accessReport = (devTypeAccessControlReport_t *)rxMsg->msg;
         app_printf("Garage Door - %d\r", accessReport->garageDoor);
 #endif
-        updateDemoStatus(&(aMessageInfo->mPeerAddr), rxMsg->msg);
     }
 }
 

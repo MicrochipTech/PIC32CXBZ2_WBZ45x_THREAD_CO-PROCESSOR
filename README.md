@@ -229,7 +229,9 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:<br>
         Type-[devType] Name - [devName]<br>
         E.g. Type-2 Name - Light
-        
+		
+        ![](Docs/output1.png)
+		
 2. <ins>thermoSensorSet</ins>:
     Sets the Thermostat Sensor with reporting HVAC device address (to report periodically) and report interval( to report to Thread Co-Processor also).
     - Syntax:<br>
@@ -239,6 +241,8 @@ Follow the steps provided in the link to [Build and program the application](htt
         hvacDevIndex - Index of the device joined as DEVICE_TYPE_THERMOSTAT_HVAC.<br>
         reportInteval - Time in seconds to configure the reporting interval(Thread Co-Processor and Thermostat HVAC).<br>
     - Response:None
+	
+	![](Docs/output2.png)
 
 3. <ins>thermoSensorGet</ins>:
     Gets the Thermostat Sensor reported value.
@@ -249,6 +253,8 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:<br>
         Temp-[temperature]<br>
         E.g. Temp-30.0
+		
+		![](Docs/output3.png)
 
 4. <ins>thermoHVACSet</ins>:
     Sets the Thermostat HVAC with set point to Turn On/Off HVAC.
@@ -258,6 +264,8 @@ Follow the steps provided in the link to [Build and program the application](htt
         devIndex - Index to the device with devType = DEVICE_TYPE_THERMOSTAT_HVAC.<br>
         setPoint - Temperature value in °C times 10. E.g. to set 29.5°C, provide 295.
     - Response:None
+	
+	![](Docs/output4.png)
 
 5. <ins>thermoHVACGet</ins>:
     Gets the Thermostat Sensor reported value.
@@ -268,6 +276,8 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:<br>
         Set Temp-[setTemp], On/Off-[hvacOnOff]<br>
         E.g. Set Temp-30.5, On/Off-1
+		
+		![](Docs/output5.png)
 
 6. <ins>lightSet</ins>:
     Sets the On/Off and HSV value of RGB LED.
@@ -280,6 +290,8 @@ Follow the steps provided in the link to [Build and program the application](htt
 		saturation - saturation of RGB led.
 		value - value of RGB led.
     - Response:None
+	
+	![](Docs/output6.png)
 
 7. <ins>lightGet</ins>:
     Gets the On/Off and HSV value of RGB LED.
@@ -290,6 +302,8 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:
 		On/Off-[onOff], H - [hue], S - [saturation], V - [value]
 		E.g. On/Off-1, H - 85, S - 255, V - 255
+		
+		![](Docs/output7.png)
 
 8. <ins>solarSet</ins>:
     Sets the Solar panel position.
@@ -300,6 +314,8 @@ Follow the steps provided in the link to [Build and program the application](htt
 		POSITION - 0,1&2.		
     - Response:None
 	
+	![](Docs/output8.png)
+	
 9. <ins>solarGet</ins>:
     Gets the On/Off and HSV value of RGB LED.
     - Syntax:<br>
@@ -309,3 +325,5 @@ Follow the steps provided in the link to [Build and program the application](htt
     - Response:
 		Solar volt - [value], Intensity - [value]
 		E.g. Solar volt - 4.5, Intensity - 100.75
+		
+		![](Docs/output9.png)
