@@ -62,7 +62,7 @@
 
 #define DEVICE_AS_LEADER         1
 
-#define APP_BROADCAST_TIMER_INTERVAL_MS   10000
+#define APP_BROADCAST_TIMER_INTERVAL_MS   5000
 
 #define PANID           0xDADA
 #define EXD_PANID       {0x4D,0x43,0x48,0x50,0x54,0x45,0x43,0x48}
